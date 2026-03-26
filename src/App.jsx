@@ -25,8 +25,9 @@ function App() {
   },[search])
 
 
+
   function onSearch(){
-    setSearch(films.find(e => e.original_title.includes(searchFilm)))
+    setSearch(films?.find(e => e.original_title?.includes(searchFilm)))
     console.log(search);
     
     /*   setFilms()
@@ -34,6 +35,7 @@ function App() {
       
     
   }
+
 
 
 
@@ -56,6 +58,16 @@ function handleSubmit(e){
         <button onClick={onSearch} type="button" className="btn btn-primary" data-mdb-ripple-init>
         <i className="fas fa-search"> cerca</i>
         </button>
+        { films.map(film=>(
+          
+          <ul key={film.id}>
+          <li>{film.title}</li>
+          <li>{film.original_title}</li>
+          <li>{film.original_language}</li>
+          <li>{film.vote_average}</li>
+          <li>{film.vote_count}</li>
+        </ul>
+        )) }
 
       </div>
     </>
