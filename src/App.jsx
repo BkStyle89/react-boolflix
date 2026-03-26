@@ -28,12 +28,7 @@ function App() {
 
   function onSearch(){
     setSearch(films?.find(e => e.original_title?.includes(searchFilm)))
-    console.log(search);
-    
-    /*   setFilms()
-      console.log(setFilms); */
-      
-    
+    console.log(search);  
   }
 
 
