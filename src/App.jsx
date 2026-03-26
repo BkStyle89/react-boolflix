@@ -6,8 +6,19 @@ function App() {
   const[search,setSearch] = useState("")
   const [searchFilm,setSearchFilm] = useState("")
   const [films,setFilms] = useState([])
+  const[flag,setFlag] = useState ()
   const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchFilm}`
+  /* const api_tv_series=`https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${searchFilm}` */
   
+ /*  function findSeries(){
+    fetch(api_tv_series)
+    .then(res=>res.json())
+    .then(data=>{
+      setFilms(data.results)
+    })}
+    useEffect(()=>{
+      findSeries()
+    },[search]) */
 
   function findFilm(){
   fetch(api_url)
@@ -30,8 +41,6 @@ function App() {
     setSearch(films?.find(e => e.original_title?.includes(searchFilm)))
     console.log(search);  
   }
-
-
 
 
 
