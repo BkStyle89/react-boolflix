@@ -6,7 +6,7 @@ function App() {
   const[search,setSearch] = useState("")
   const [searchFilm,setSearchFilm] = useState("")
   const [films,setFilms] = useState([])
-  const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${search}`
+  const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchFilm}`
   
 
   function findFilm(){
