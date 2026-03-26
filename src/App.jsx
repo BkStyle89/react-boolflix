@@ -19,7 +19,7 @@ useEffect(findFilm)
 
 
 function onSearch(){
-  if(films.find(item=>item.title)){
+  if(films.find(searchFilm == findFilm.title)){
     setFilms(onSearch)
     console.log(setFilms);
     
@@ -27,11 +27,13 @@ function onSearch(){
 }
 
 
+
+
   return (
     <>
       <div className="input-group">
         <div className="form-outline" data-mdb-input-init>
-          <input id="search-focus" type="search" className="form-control" />
+          <input id="search-focus" type="search" value={searchFilm} onChange={e=> setSearchFilm(e.target.value)} className="form-control" />
           <label className="form-label">Search</label>
         </div>
         <button onClick={onSearch} type="button" className="btn btn-primary" data-mdb-ripple-init>
