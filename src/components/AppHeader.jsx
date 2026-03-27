@@ -6,7 +6,7 @@ export default function AppHeader(){
         <>
             <header>
                 <div className="topBar">
-                    <h1 className="text-center">BOOFLIX</h1>
+                    <p className="mainTitle text-center">BOOFLIX</p>
                 </div>
             </header>
         </>
