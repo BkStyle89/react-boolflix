@@ -51,7 +51,7 @@ function handleSubmit(e){
 
   return (
     <>
-    <span class="fi fi-us"></span> United States
+    <span className="fi fi-us"></span> United States
       <div className="input-group">
         <div className="form-outline" data-mdb-input-init>
           <form onSubmit={handleSubmit}>
@@ -64,11 +64,12 @@ function handleSubmit(e){
         </button>
         { films.map(film=>(
           <ul >
-            <li key={film.id}>{film.title}
+            <li key={film.id}>
+              {film.title}
               <br />
               {film.original_title}
               <br />
-              {film.original_language}
+              <div className={`fi fi-${film.original_language}`}></div>
               <br />
               {film.vote_average}
               {film.vote_count}
