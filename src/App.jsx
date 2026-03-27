@@ -58,6 +58,7 @@ function handleSubmit(e){
             <label className="form-label">Search</label>
           </form>
         </div>
+        </div>
         <button onClick={onSearch} type="button" className="btn btn-primary" data-mdb-ripple-init>
           <i className="fas fa-search"> cerca</i>
         </button>
@@ -68,6 +69,7 @@ function handleSubmit(e){
               <br />
               {film.original_title}
               <br />
+              <img src={`https://image.tmdb.org/t/p/w400/${film.poster_path}`} alt="Poster" />
               <div className={`fi fi-${film.original_language}`}></div>
               <br />
               {film.vote_average}
@@ -82,6 +84,7 @@ function handleSubmit(e){
               <br />
               {tv.original_title}
               <br />
+              <img src={`https://image.tmdb.org/t/p/w400/${tv.poster_path}`} alt="Poster" />
               <div className={`fi fi-${tv.original_language}`}></div>
               <br />
               {tv.vote_average}
@@ -89,7 +92,7 @@ function handleSubmit(e){
             </li>
           </ul>
         )) }
-      </div>
+      
     </>
   )
 }
