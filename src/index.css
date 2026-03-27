@@ -1,2 +1,11 @@
 @import url('bootstrap');
 @import "flag-icons/css/flag-icons.min.css";
+
+*{
+    background-color: black;
+}
+
+.card{width: 25rem;}
+
+.poster{width: 20rem;}
+
