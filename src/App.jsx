@@ -11,6 +11,7 @@ function App() {
   const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchFilm}`
   const api_tv_series=`https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${searchFilm}` 
   
+  
   function findSeries(){
     fetch(api_tv_series)
     .then(res=>res.json())
@@ -36,8 +37,6 @@ function App() {
     findFilm()
   },[search])
 
-
-
   function onSearch(){
     setSearch(films?.find(e => e.original_title?.includes(searchFilm)))
     console.log(search); 
@@ -45,37 +44,37 @@ function App() {
   }
   
 
-
-
 function handleSubmit(e){
   e.preventDefault()
 }
 
 
-
   return (
     <>
+    <span class="fi fi-us"></span> United States
       <div className="input-group">
         <div className="form-outline" data-mdb-input-init>
           <form onSubmit={handleSubmit}>
-          <input id="search-focus" type="text" value={searchFilm} onChange={e=> setSearchFilm(e.target.value)} className="form-control" />
-          <label className="form-label">Search</label>
+            <input id="search-focus" type="text" value={searchFilm} onChange={e=> setSearchFilm(e.target.value)} className="form-control" />
+            <label className="form-label">Search</label>
           </form>
         </div>
         <button onClick={onSearch} type="button" className="btn btn-primary" data-mdb-ripple-init>
-        <i className="fas fa-search"> cerca</i>
+          <i className="fas fa-search"> cerca</i>
         </button>
         { films.map(film=>(
-          
-          <ul key={film.id}>
-          <li>{film.title}</li>
-          <li>{film.original_title}</li>
-          <li>{film.original_language}</li>
-          <li>{film.vote_average}</li>
-          <li>{film.vote_count}</li>
-        </ul>
+          <ul >
+            <li key={film.id}>{film.title}
+              <br />
+              {film.original_title}
+              <br />
+              {film.original_language}
+              <br />
+              {film.vote_average}
+              {film.vote_count}
+            </li>
+          </ul>
         )) }
-
       </div>
     </>
   )
