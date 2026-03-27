@@ -6,7 +6,6 @@ function App() {
   const[search,setSearch] = useState("")
   const [searchFilm,setSearchFilm] = useState("")
   const [films,setFilms] = useState([])
-  const[flag,setFlag] = useState ()
   const[tvSeries, setTvSeries] = useState([])
   const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchFilm}`
   const api_tv_series=`https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${searchFilm}` 
@@ -73,6 +72,20 @@ function handleSubmit(e){
               <br />
               {film.vote_average}
               {film.vote_count}
+            </li>
+          </ul>
+        )) }
+        { tvSeries.map(tv=>(
+          <ul >
+            <li key={tv.id}>
+              {tv.title}
+              <br />
+              {tv.original_title}
+              <br />
+              <div className={`fi fi-${tv.original_language}`}></div>
+              <br />
+              {tv.vote_average}
+              {tv.vote_count}
             </li>
           </ul>
         )) }
