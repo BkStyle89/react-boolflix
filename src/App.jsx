@@ -74,10 +74,10 @@ function handleSubmit(e){
           <div className="container ">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                   { films.map(film=>(
-                    <ul className="bg-light">
+                    <div className="bg-light">
                     <div className="col">
                     <div className="card bg-danger">
-                      <li key={film.id} className="bg-light">
+                      <div key={film.id} className="bg-light">
                         <div className="text-center bg-light fw-bolder">{film.title}</div>
                         <br />
                         <div className="text-center bg-light fw-bold">{film.original_title}</div>
@@ -96,20 +96,20 @@ function handleSubmit(e){
                             {film.vote_count}
                           </div>
                         </div>
-                      </li>
+                      </div>
                     </div>
                   </div>
-                    </ul>
+                    </div>
                   ))}
             </div>
           </div>
           <div className="container">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                   { tvSeries.map(tv=>(
-                    <ul className="bg-light">
+                    <div className="bg-light">
                     <div className="col">
                       <div className="card gy-5 bg-danger">
-                      <li className="bg-light" key={tv.id}>
+                      <div className="bg-light" key={tv.id}>
                         <div className="text-center bg-light fw-bolder">{tv.name}</div>
                         <br />
                         <div className="text-center bg-light fw-bold">{tv.original_name}</div>
@@ -128,10 +128,10 @@ function handleSubmit(e){
                             {tv.vote_count}
                           </div>  
                         </div>
-                      </li>
+                      </div>
                       </div>
                     </div>
-                    </ul>
+                    </div>
                   )) }
             </div>
           </div>
