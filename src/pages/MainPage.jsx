@@ -9,7 +9,6 @@ const api_key=import.meta.env.VITE_API_KEY
   const [searchFilm,setSearchFilm] = useState("")
   const [films,setFilms] = useState([])
   const[tvSeries, setTvSeries] = useState([])
-  const [stars,setStars]=useState()
   const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchFilm}`
   const api_tv_series=`https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${searchFilm}` 
   
@@ -52,9 +51,6 @@ function handleSubmit(e){
   e.preventDefault()
 }
 
-function starsValue(){
-    
-}
 
 /* Stars From Boostrap
 
@@ -98,7 +94,7 @@ empty Star <i class="bi bi-star"></i>
                 { films.map(film=>(
                     <div >
                         <div className="col">
-                            <div className="card bg-dark d-flex p-3 ">
+                            <div className="card bg-dark d-flex p-3 mt-3">
                                 <div key={film.id} className="bg-light p-3">
                                     <div className="text-center bg-light fw-bolder">{film.title}</div>
                                     <br />
@@ -113,8 +109,8 @@ empty Star <i class="bi bi-star"></i>
                                     </div>
                                     <br />
                                     <div className="d-flex justify-content-between bg-light">
-                                        <div className="bg-light">{ film.vote_average.toFixed() 
-                                        }</div>
+                                        
+                                        <div className="bg-light">{ film.vote_average.toFixed()}</div>
                                         <div className="bg-light">{film.vote_count}</div>
                                     </div>
                                 </div>
@@ -128,7 +124,7 @@ empty Star <i class="bi bi-star"></i>
                 {tvSeries.map(tv=>(
                     <div>
                         <div className="col">
-                            <div className="card bg-dark d-flex p-3">
+                            <div className="card bg-dark d-flex p-3 mt-3">
                                 <div className="bg-light p-3" key={tv.id}>
                                     <div className="text-center bg-light fw-bolder">{tv.name}</div>
                                     <br />
