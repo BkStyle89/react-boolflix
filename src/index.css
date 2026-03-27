@@ -1,11 +1,23 @@
 @import url('bootstrap');
 @import "flag-icons/css/flag-icons.min.css";
 
-*{
-    background-color: black;
-}
 
 .card{width: 25rem;}
 
 .poster{width: 20rem;}
 
+.searchFilm{
+    width: 100px;
+    
+}
+h1{
+    color: black;
+}
+
+.topBar{
+    background-color: brown;
+}
+main{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, black, red);
+}
