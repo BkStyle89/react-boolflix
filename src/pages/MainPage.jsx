@@ -43,13 +43,40 @@ const api_key=import.meta.env.VITE_API_KEY
   function onSearch(){
     setSearch(films?.find(e => e.original_title?.includes(searchFilm)))
     console.log(search); 
-    setSearch(tvSeries?.find(e=> e.original_title.includes(searchFilm))) 
+    setSearch(tvSeries?.find(e=> e.original_title?.includes(searchFilm))) 
   }
   
 
 function handleSubmit(e){
   e.preventDefault()
 }
+
+
+
+
+function ratingStars(vote){
+
+    const stars = []    
+    const ratingCeil = Math.ceil(vote/2)
+
+/*     for(let i=0; i<ratingCeil; i++){
+        stars.push(<i class="bi bi-star-fill"></i>)
+    }
+    for(let i=ratingCeil; i<5; i++){
+        stars.push(<i class="bi bi-star"></i>)
+    } */
+    
+    for(let i=0; i<5;i++){
+        if(i<ratingCeil){
+            stars.push(<i class="bi bi-star-fill"></i>)
+        }else{
+            stars.push(<i class="bi bi-star"></i>)
+        }
+    }
+
+
+    return stars
+}   
 
 
 /* Stars From Boostrap
@@ -101,7 +128,7 @@ empty Star <i class="bi bi-star"></i>
                                     <div className="text-center bg-light fw-bold">{film.original_title}</div>
                                     <br />
                                     <div className="d-flex justify-content-center">
-                                        <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w400/${film.poster_path}`} alt="Poster" />
+                                        <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w342/${film.poster_path}`} alt="Poster" />
                                     </div>
                                     <br />
                                     <div className="text-center bg-light">
@@ -110,7 +137,7 @@ empty Star <i class="bi bi-star"></i>
                                     <br />
                                     <div className="d-flex justify-content-between bg-light">
                                         
-                                        <div className="bg-light">{ film.vote_average.toFixed()}</div>
+                                        <div className="bg-light">{ ratingStars(film.vote_average)}</div>
                                         <div className="bg-light">{film.vote_count}</div>
                                     </div>
                                 </div>
@@ -131,7 +158,7 @@ empty Star <i class="bi bi-star"></i>
                                     <div className="text-center bg-light fw-bold">{tv.original_name}</div>
                                     <br />
                                     <div className="d-flex justify-content-center">
-                                        <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w400/${tv.poster_path}`} alt="Poster" />
+                                        <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w342/${tv.poster_path}`} alt="Poster" />
                                     </div>
                                     <br />
                                     <div className="text-center bg-light">
