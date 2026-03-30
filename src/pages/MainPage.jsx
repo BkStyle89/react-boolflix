@@ -10,6 +10,7 @@ const api_key=import.meta.env.VITE_API_KEY
   const [searchFilm,setSearchFilm] = useState("")
   const [films,setFilms] = useState([])
   const[tvSeries, setTvSeries] = useState([])
+  const[genre, setGenre] = useState("")
   const api_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${searchFilm}`
   const api_tv_series=`https://api.themoviedb.org/3/search/tv?api_key=${api_key}&query=${searchFilm}` 
   
@@ -52,7 +53,9 @@ function handleSubmit(e){
   e.preventDefault()
 }
 
+function findGenre(){
 
+}
 
 
 function ratingStars(vote){
@@ -102,10 +105,12 @@ empty Star <i class="bi bi-star"></i>
                                 <label className="form-label text-dark"></label>
                             </div>
                             <div className="d-flex justify-content-center mt-2 mb-2">
-                                <button onClick={onSearch} type="button" className="searchFilm btn btn-primary" data-mdb-ripple-init>
+                                <button onClick={onSearch} type="button" className="searchFilm btn btn-primary gy-4" data-mdb-ripple-init>
                                     <i className="fas fa-search bg-primary"> cerca</i>
                                 </button>
+                                <button type="button" className="searchFilm btn btn-primary ">genere </button>
                             </div>  
+                            
                         </form>
                     </div>
                 </div>
@@ -127,7 +132,7 @@ empty Star <i class="bi bi-star"></i>
                                     <div className="d-flex justify-content-center">
                                         <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w342/${film.poster_path}`} alt="Poster" />
                                     </div>
-                                    <div className="content">
+                        <div className="content">
                                         <div className="text-center text-light fw-bolder">{film.title}</div>
                                         <br />
                                         <div className="text-center text-light fw-bold">{film.original_title}</div>

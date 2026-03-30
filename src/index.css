@@ -50,6 +50,7 @@
 
 .searchFilm{
     width: 100px;
+    border: solid black 2px;
     
 }
 h1{
@@ -63,7 +64,7 @@ h1{
 
 .footerBar{
     background-color: brown;
-    text-shadow:  2px 2px 5px white;
+    text-shadow:  2px 2px 5px black;
     display: flex;
     border-top: black 2px;
 }
