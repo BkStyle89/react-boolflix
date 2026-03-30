@@ -119,26 +119,29 @@ empty Star <i class="bi bi-star"></i>
         <div className="container ">
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                 { films.map(film=>(
-                    <div >
-                        <div className="col">
-                            <div className="card bg-dark d-flex p-3 mt-3">
-                                <div key={film.id} className="bg-light p-3">
-                                    <div className="text-center bg-light fw-bolder">{film.title}</div>
-                                    <br />
-                                    <div className="text-center bg-light fw-bold">{film.original_title}</div>
-                                    <br />
+                    <div className="col">
+                        <div className="wrap">
+                            <div className="card bg-dark d-flex mt-3 h-auto">
+                                <div key={film.id} className="text-light p-3">
                                     <div className="d-flex justify-content-center">
                                         <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w342/${film.poster_path}`} alt="Poster" />
                                     </div>
-                                    <br />
-                                    <div className="text-center bg-light">
-                                        <div className={`fi fi-${film.original_language}`}></ div>
-                                    </div>
-                                    <br />
-                                    <div className="d-flex justify-content-between bg-light">
-                                        
-                                        <div className="bg-light">{ ratingStars(film.vote_average)}</div>
-                                        <div className="bg-light">{film.vote_count}</div>
+                                    <div className="content">
+                                        <div className="text-center text-light fw-bolder">{film.title}</div>
+                                        <br />
+                                        <div className="text-center text-light fw-bold">{film.original_title}</div>
+                                        <br />
+                                        <br />
+                                        <div className="text-center ">
+                                            <div className={`fi fi-${film.original_language}`}></ div>
+                                        </div>
+                                        <p className="text-center">{film.overview}</p>
+                                        <br />
+                                        <div className="d-flex justify-content-between text-light">
+                                            
+                                            <div className="text-light">{ ratingStars(film.vote_average)}</div>
+                                            <div className="text-light">{film.vote_count}</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -149,28 +152,31 @@ empty Star <i class="bi bi-star"></i>
 {/*  Card Delle Serie TV */}
 
                 {tvSeries.map(tv=>(
-                    <div>
-                        <div className="col">
-                            <div className="card bg-dark d-flex p-3 mt-3">
+                    <div className="col">
+                        <div className="wrap">
+                            <div className="card bg-dark d-flex mt-3 h-auto">
                                 <div className="bg-light p-3" key={tv.id}>
-                                    <div className="text-center bg-light fw-bolder">{tv.name}</div>
-                                    <br />
-                                    <div className="text-center bg-light fw-bold">{tv.original_name}</div>
-                                    <br />
                                     <div className="d-flex justify-content-center">
                                         <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w342/${tv.poster_path}`} alt="Poster" />
                                     </div>
-                                    <br />
-                                    <div className="text-center bg-light">
-                                        <div className={`fi fi-${tv.original_language}`}></div>
-                                    </div>
-                                    <br />
-                                    <div className="d-flex justify-content-between bg-light">
-                                        <div className="bg-light">
-                                            {tv.vote_average}
+                                    <div className="content">
+                                        <div className="text-center text-light fw-bolder">{tv.name}</div>
+                                        <br />
+                                        <div className="text-center text-light fw-bold">{tv.original_name}</div>
+                                        <br />
+                                        <br />
+                                        <div className="text-center ">
+                                            <div className={`fi fi-${tv.original_language}`}></div>
                                         </div>
-                                        <div className="bg-light">
-                                            {tv.vote_count}
+                                        <p>{tv.overview} </p>
+                                        <br />
+                                        <div className="d-flex justify-content-between text-light">
+                                            <div className="text-light">
+                                                {ratingStars(tv.vote_average)}
+                                            </div>
+                                            <div className="text-light">
+                                                {tv.vote_count}
+                                            </div>
                                         </div>  
                                     </div>
                                 </div>
