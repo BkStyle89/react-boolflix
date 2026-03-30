@@ -53,9 +53,10 @@ function handleSubmit(e){
   e.preventDefault()
 }
 
-function findGenre(){
+/* function findGenre(){
+    setGenre(films?.find(e=> e.))
 
-}
+} */
 
 
 function ratingStars(vote){
@@ -108,9 +109,13 @@ empty Star <i class="bi bi-star"></i>
                                 <button onClick={onSearch} type="button" className="searchFilm btn btn-primary gy-4" data-mdb-ripple-init>
                                     <i className="fas fa-search bg-primary"> cerca</i>
                                 </button>
-                                <button type="button" className="searchFilm btn btn-primary ">genere </button>
+                                <select className="searchFilm btn btn-primary">
+                                <option value="Fantascenza">Fantascenza</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Avventura">Avventura</option>
+                                <option value="Azione">Azione</option>
+                                </select>
                             </div>  
-                            
                         </form>
                     </div>
                 </div>
