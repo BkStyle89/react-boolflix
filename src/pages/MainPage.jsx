@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react"
 import AppHeader from "../components/AppHeader";
+import AppFooter from "../components/AppFooter";
 
 export default function MainPage(){
 
@@ -168,7 +169,7 @@ empty Star <i class="bi bi-star"></i>
                                         <div className="text-center ">
                                             <div className={`fi fi-${tv.original_language}`}></div>
                                         </div>
-                                        <p>{tv.overview} </p>
+                                        <p className="text-light text-center">{tv.overview} </p>
                                         <br />
                                         <div className="d-flex justify-content-between text-light">
                                             <div className="text-light">
@@ -189,6 +190,7 @@ empty Star <i class="bi bi-star"></i>
     </div>
 </div>
 </main>
+<AppFooter/>
 </>
     )
 }

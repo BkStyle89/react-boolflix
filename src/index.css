@@ -12,6 +12,7 @@
 .card{
     width: 25rem;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .content{
@@ -57,6 +58,13 @@ h1{
 
 .topBar{
     background-color: brown;
+}
+
+.footerBar{
+    background-color: brown;
+    text-shadow:  2px 2px 5px white;
+    display: flex;
+    border-top: black 2px;
 }
 main{
     min-height: 100vh;
