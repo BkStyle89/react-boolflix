@@ -58,6 +58,7 @@ h1{
 
 .topBar{
     background-color: brown;
+    border-bottom: solid black 20px;
 }
 
 .footerBar{
