@@ -154,7 +154,7 @@ empty Star <i class="bi bi-star"></i>
                 {tvSeries.map(tv=>(
                     <div className="col">
                         <div className="wrap">
-                            <div className="card bg-dark d-flex mt-3 h-auto">
+                            <div className="card bg-dark d-flex p-3 mt-3 h-auto">
                                 <div className="bg-light p-3" key={tv.id}>
                                     <div className="d-flex justify-content-center">
                                         <img className="poster bg-light border border-dark" src={`https://image.tmdb.org/t/p/w342/${tv.poster_path}`} alt="Poster" />
