@@ -16,4 +16,4 @@ return (
   )
 }
 
-export default A
+export default App
