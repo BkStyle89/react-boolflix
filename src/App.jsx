@@ -10,7 +10,7 @@ return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage/>}/>
-      </Routet>
+      </Routes>
     </BrowserRouter>
   </>
   )
